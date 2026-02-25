@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400&family=Cormorant+Garamond:wght@300;400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-editorial: "Cormorant Garamond", serif;
+  --font-logo: "Cinzel", serif;
+  --color-forest-luxury: #0B2815;
+  --color-gold-luxury: #D4AF37;
+  --color-cream-luxury: #F9F9F7;
+  --color-charcoal: #333333;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-charcoal bg-white;
+  }
+}
+
+.logo-font {
+  font-family: var(--font-logo);
+  letter-spacing: 0.3em;
+  font-weight: 400;
+}
+
+.nav-link-hover {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full;
+}
+
+.btn-hover-expand {
+  @apply transition-all duration-500 ease-out;
+}
+
+.btn-hover-expand:hover {
+  letter-spacing: 0.4em;
+}
+
+.card-text-shift {
+  @apply transition-transform duration-500 ease-out;
+}
+
+.group:hover .card-text-shift {
+  transform: translateY(-4px);
+}
